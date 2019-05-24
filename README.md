@@ -10,6 +10,15 @@ docker-compose-lemp
 #### sudo systemctl enable docker
 #### docker --version
 
+# install docker-compose 
+
+#### sudo yum install epel-release
+#### sudo yum install -y python-pip
+#### sudo pip install docker-compose
+#### sudo yum upgrade python*
+#### docker-compose version
+
+
 # now all things is ready hero :-)
 #### docker-compose build
 #### docker-compose down && docker-compose up -d
