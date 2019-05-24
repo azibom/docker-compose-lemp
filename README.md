@@ -8,16 +8,12 @@ docker-compose-lemp
 #### sudo apt install docker.io
 #### sudo systemctl start docker
 #### sudo systemctl enable docker
-#### docker --version
+#### docker version
 
 
 ### sudo apt-get install yum
 # install docker-compose 
-
-#### sudo yum install epel-release
-#### sudo yum install -y python-pip
-#### sudo pip install docker-compose
-#### sudo yum upgrade python*
+#### sudo apt install docker-compose -y
 #### docker-compose version
 
 
