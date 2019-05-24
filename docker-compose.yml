@@ -1,0 +1,52 @@
+version: "2"
+
+services:
+    lemp-nginx:
+        image: nginx:latest
+        container_name: lemp-nginx
+        ports:
+            - "80:80"
+#           - "443:443"
+        volumes:
+            - ./website:/var/www/html/website:rw # With read / write access
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # With read-only access
+        networks:
+            - lemp-network
+        links:
+            - lemp-php
+    lemp-mariadb:
+        image: mariadb:latest
+        container_name: lemp-mariadb
+        volumes:
+            - lemp-volume-mariadb:/var/lib/mysql
+        networks:
+            - lemp-network
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+    lemp-php:
+        build: ./
+        container_name: lemp-php
+        volumes:
+            - ./website:/var/www/html/website
+        networks:
+            - lemp-network
+        links:
+            - lemp-mariadb
+
+    lemp-phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: lemp-phpmyadmin
+        networks:
+            - lemp-network
+        ports:
+            - "8183:80"
+        environment:
+            PMA_ARBITRARY: 1
+        links:
+            - lemp-mariadb
+
+networks:
+    lemp-network:
+        driver: bridge
