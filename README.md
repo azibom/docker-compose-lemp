@@ -10,8 +10,6 @@ docker-compose-lemp
 #### sudo systemctl enable docker
 #### docker version
 
-
-### sudo apt-get install yum
 # install docker-compose 
 #### sudo apt install docker-compose -y
 #### docker-compose version
