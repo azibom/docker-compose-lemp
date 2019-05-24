@@ -10,6 +10,8 @@ docker-compose-lemp
 #### sudo systemctl enable docker
 #### docker --version
 
+
+### sudo apt-get install yum
 # install docker-compose 
 
 #### sudo yum install epel-release
