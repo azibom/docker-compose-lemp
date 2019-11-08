@@ -18,7 +18,7 @@ services:
         image: mariadb:latest
         container_name: lemp-mariadb
         volumes:
-            - lemp-volume-mariadb:/var/lib/mysql
+            - ./lemp-volume-mariadb:/var/lib/mysql
         networks:
             - lemp-network
         ports:
