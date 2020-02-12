@@ -5,7 +5,7 @@ services:
         image: nginx:latest
         container_name: lemp-nginx
         ports:
-            - "80:80"
+            - "85:80"
 #           - "443:443"
         volumes:
             - ./website:/var/www/html/website:rw # With read / write access
@@ -24,7 +24,7 @@ services:
         ports:
             - "3306:3306"
         environment:
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: 4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2
     lemp-php:
         build: ./
         container_name: lemp-php
